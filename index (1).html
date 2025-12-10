@@ -1,33 +1,420 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>UCC Table Scene - A-Frame</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCC Assignment - Quiz Study Scene with 7 Charts</title>
+    <meta name="author" content="PS/CSC/22/0034">
+    <meta name="description" content="A-Frame 3D scene showing a table with MAG-TR, MIR-Tm, 2 cups, and 7 charts around it for quiz study">
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-  </head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        .instructions {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            max-width: 300px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .instructions h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .instructions ul {
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .student-info {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(44, 62, 80, 0.9);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            max-width: 250px;
+        }
+        .student-info h3 {
+            margin-top: 0;
+            color: #ecf0f1;
+        }
+        .controls {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 5px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Instructions Panel -->
+    <div class="instructions">
+        <h3>Assignment Requirements ✓</h3>
+        <ul>
+            <li>✓ Table with MAG-TR (Magnetic Tape Recorder)</li>
+            <li>✓ Table with MIR-Tm (Mirror with Thermometer)</li>
+            <li>✓ 2 Cups on table</li>
+            <li>✓ 7 Charts around table</li>
+            <li>✓ Study environment context</li>
+        </ul>
+        <p><strong>Move:</strong> WASD/Arrow Keys<br>
+           <strong>Look:</strong> Click & Drag<br>
+           <strong>Zoom:</strong> Mouse Wheel</p>
+    </div>
 
-  <body>
-    <a-scene background="color: #f0ede8">
+    <!-- Student Information -->
+    <div class="student-info">
+        <h3>UCC Assignment Submission</h3>
+        <p><strong>Student:</strong> PS/CSC/22/0034</p>
+        <p><strong>Date:</strong> November 2023</p>
+        <p><strong>Course:</strong> Computer Science</p>
+        <p><strong>Assignment:</strong> 3D Scene with A-Frame</p>
+    </div>
 
-      <a-plane position="0 0 0" rotation="-90 0 0" width="16" height="16" color="#9c6e45"></a-plane>
-      <a-box position="0 -8 4" depth="0.5" width="16" height="8" color="#f5f2e7"></a-box>
-      <a-box position="-8 0 4" depth="16" width="0.5" height="8" color="#f5f2e7"></a-box>
+    <!-- Controls Info -->
+    <div class="controls">
+        <h3>Scene Elements:</h3>
+        <p>• 7 Educational Charts<br>
+           • Study Table with Required Items<br>
+           • MAG-TR & MIR-Tm Devices<br>
+           • 2 Cups with Beverages<br>
+           • Complete Study Environment</p>
+    </div>
 
-      <a-box position="0 0 2" width="6" depth="4" height="0.2" color="#c08b50"></a-box>
+    <!-- A-FRAME SCENE -->
+    <a-scene embedded background="color: #e8f0f8" vr-mode-ui="enabled: false">
 
-      <a-box position="2.6 1.6 1" width="0.3" depth="0.3" height="2" color="#c08b50"></a-box>
-      <a-box position="-2.6 1.6 1" width="0.3" depth="0.3" height="2" color="#c08b50"></a-box>
-      <a-box position="2.6 -1.6 1" width="0.3" depth="0.3" height="2" color="#c08b50"></a-box>
-      <a-box position="-2.6 -1.6 1" width="0.3" depth="0.3" height="2" color="#c08b50"></a-box>
+      <!-- ================= ROOM STRUCTURE ================= -->
+      <!-- Floor - Wooden Study Room -->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="25" height="25"
+               color="#8B7355" material="roughness: 0.8"></a-plane>
 
-      <a-plane position="0 0 2.11" rotation="-90 0 0" width="7" height="5"
-        color="#cc0000"
-        material="shader: standard; src: https://cdn.aframe.io/a-painter/images/checker.png; repeat: 8 8;">
-      </a-plane>
+      <!-- Walls with Study Room Feel -->
+      <a-box position="0 6 -12.5" depth="0.2" width="25" height="12"
+             color="#f5f5f0" material="roughness: 0.7"></a-box>
+      
+      <a-box position="12.5 6 0" depth="25" width="0.2" height="12"
+             color="#f5f5f0" material="roughness: 0.7"></a-box>
+      
+      <a-box position="-12.5 6 0" depth="25" width="0.2" height="12"
+             color="#f5f5f0" material="roughness: 0.7"></a-box>
 
-      <a-entity position="-4 -4 4" rotation="-25 45 0">
-        <a-camera></a-camera>
+      <!-- Ceiling -->
+      <a-plane position="0 12 0" rotation="90 0 0" width="25" height="25"
+               color="#e8e8e0"></a-plane>
+
+      <!-- Room Sign -->
+      <a-text value="QUIZ PREPARATION ROOM" position="0 10 -12.3" 
+              color="#2c3e50" align="center" width="6" font="exo2bold"></a-text>
+
+      <!-- ================= CENTER STUDY TABLE ================= -->
+      <!-- Table Top -->
+      <a-box position="0 1.5 0" width="8" depth="4" height="0.3"
+             color="#654321" material="roughness: 0.6"></a-box>
+
+      <!-- Table Legs -->
+      <a-box position="3.5 0.5 1.5" width="0.3" depth="0.3" height="2"
+             color="#3d2b1f"></a-box>
+      <a-box position="-3.5 0.5 1.5" width="0.3" depth="0.3" height="2"
+             color="#3d2b1f"></a-box>
+      <a-box position="3.5 0.5 -1.5" width="0.3" depth="0.3" height="2"
+             color="#3d2b1f"></a-box>
+      <a-box position="-3.5 0.5 -1.5" width="0.3" depth="0.3" height="2"
+             color="#3d2b1f"></a-box>
+
+      <!-- Table Edge Trim -->
+      <a-box position="0 1.65 2.015" width="8.2" depth="4.2" height="0.05"
+             color="#3d2b1f"></a-box>
+
+      <!-- ================= REQUIRED ITEMS ON TABLE ================= -->
+      <!-- MAG-TR (Magnetic Tape Recorder) - Left side -->
+      <a-entity position="-2.2 1.8 0.8" rotation="0 15 0">
+        <!-- Main Body -->
+        <a-box width="1.6" depth="0.9" height="0.5" color="#1a1a2e">
+          <!-- Tape Window -->
+          <a-box position="0 0.05 0.26" width="0.8" depth="0.02" height="0.25"
+                 color="#000000" opacity="0.7"></a-box>
+          <!-- Control Panel -->
+          <a-box position="0 -0.15 0.26" width="1.4" depth="0.05" height="0.15"
+                 color="#2c3e50"></a-box>
+          <!-- Buttons -->
+          <a-cylinder position="-0.4 -0.08 0.31" radius="0.05" height="0.03"
+                      color="#e74c3c"></a-cylinder>
+          <a-cylinder position="0 -0.08 0.31" radius="0.05" height="0.03"
+                      color="#27ae60"></a-cylinder>
+          <a-cylinder position="0.4 -0.08 0.31" radius="0.05" height="0.03"
+                      color="#f39c12"></a-cylinder>
+          <!-- Display -->
+          <a-plane position="0 0.15 0.31" width="0.6" height="0.15"
+                   color="#0f3460"></a-plane>
+          <a-text value="MAG-TR" position="0 0.15 0.32" scale="0.3 0.3 0.3"
+                  color="#00ff00" align="center"></a-text>
+        </a-box>
+        <!-- Tape Spools -->
+        <a-cylinder position="-0.3 0.1 0.26" radius="0.08" height="0.1"
+                    color="#7f8c8d" rotation="90 0 0"></a-cylinder>
+        <a-cylinder position="0.3 0.1 0.26" radius="0.08" height="0.1"
+                    color="#7f8c8d" rotation="90 0 0"></a-cylinder>
       </a-entity>
 
-    </a-scene>
-  </body>
-</html>
+      <!-- MIR-Tm (Mirror with Thermometer) - Right side -->
+      <a-entity position="2.2 1.8 0.8" rotation="0 -15 0">
+        <!-- Mirror Frame -->
+        <a-box width="0.85" depth="0.12" height="1.3" color="#34495e">
+          <!-- Mirror Surface -->
+          <a-plane position="0 0 0.07" width="0.75" height="1.1"
+                   color="#3498db" opacity="0.6"></a-plane>
+          <!-- Thermometer Holder -->
+          <a-box position="0.52 0 0" width="0.08" depth="0.08" height="1.1"
+                 color="#7f8c8d"></a-box>
+          <!-- Thermometer Tube -->
+          <a-cylinder position="0.52 0 0.05" radius="0.02" height="0.9"
+                      color="#ecf0f1"></a-cylinder>
+          <!-- Mercury -->
+          <a-box position="0.52 -0.2 0.05" width="0.015" depth="0.015" height="0.5"
+                 color="#e74c3c"></a-box>
+          <!-- Temperature Marks -->
+          <a-text value="°C" position="0.52 0.4 0.08" scale="0.15 0.15 0.15"
+                  color="#2c3e50" align="center"></a-text>
+          <a-text value="MIR-Tm" position="0 0.6 0.08" scale="0.2 0.2 0.2"
+                  color="white" align="center"></a-text>
+        </a-box>
+      </a-entity>
+
+      <!-- 2 CUPS (as required) -->
+      <!-- Cup 1 - Coffee -->
+      <a-entity position="-1 1.8 -0.8" rotation="0 10 0">
+        <!-- Saucer -->
+        <a-cylinder radius="0.25" height="0.04" color="#ffffff"
+                    material="roughness: 0.3"></a-cylinder>
+        <!-- Cup -->
+        <a-cylinder position="0 0.15 0" radius="0.15" height="0.35"
+                     color="#f0f0f0" material="roughness: 0.4">
+          <!-- Coffee Liquid -->
+          <a-cylinder position="0 0.05 0" radius="0.13" height="0.3"
+                       color="#6f4e37"></a-cylinder>
+          <!-- Steam -->
+          <a-sphere position="0 0.25 0" radius="0.05" color="#ffffff" opacity="0.3"></a-sphere>
+        </a-cylinder>
+        <!-- Handle -->
+        <a-torus position="0.2 0.15 0" radius="0.08" radius-tubular="0.02"
+                 color="#f0f0f0" rotation="0 0 90"></a-torus>
+        <!-- Coffee Label -->
+        <a-text value="COFFEE" position="0 0.35 0" scale="0.15 0.15 0.15"
+                color="#8B4513" align="center"></a-text>
+      </a-entity>
+
+      <!-- Cup 2 - Tea -->
+      <a-entity position="1 1.8 -0.8" rotation="0 -10 0">
+        <!-- Saucer -->
+        <a-cylinder radius="0.25" height="0.04" color="#ffffff"
+                    material="roughness: 0.3"></a-cylinder>
+        <!-- Cup -->
+        <a-cylinder position="0 0.15 0" radius="0.15" height="0.35"
+                     color="#f0f0f0" material="roughness: 0.4">
+          <!-- Tea Liquid -->
+          <a-cylinder position="0 0.05 0" radius="0.13" height="0.3"
+                       color="#d2691e"></a-cylinder>
+          <!-- Steam -->
+          <a-sphere position="0 0.25 0" radius="0.05" color="#ffffff" opacity="0.3"></a-sphere>
+        </a-cylinder>
+        <!-- Handle -->
+        <a-torus position="0.2 0.15 0" radius="0.08" radius-tubular="0.02"
+                 color="#f0f0f0" rotation="0 0 90"></a-torus>
+        <!-- Tea Label -->
+        <a-text value="TEA" position="0 0.35 0" scale="0.15 0.15 0.15"
+                color="#8B4513" align="center"></a-text>
+      </a-entity>
+
+      <!-- ================= 7 CHARTS AROUND TABLE ================= -->
+      <!-- Chart 1 - Mathematics (Back Left Wall) -->
+      <a-entity position="-8 3.5 -12" rotation="0 0 0">
+        <a-plane width="3" height="2" color="#ffffff" material="shader: flat; side: double">
+          <a-text value="MATHEMATICS" position="0 0.7 0.01" color="#2c3e50" 
+                  width="2.8" align="center" font="exo2bold"></a-text>
+          <a-text value="∫ f(x)dx = F(x) + C" position="0 0.3 0.01" color="#2980b9"
+                  width="2.8" align="center"></a-text>
+          <a-text value="lim x→∞ (1+1/x)ˣ = e" position="0 0 0.01" color="#2980b9"
+                  width="2.8" align="center"></a-text>
+          <a-text value="a² + b² = c²" position="0 -0.3 0.01" color="#2980b9"
+                  width="2.8" align="center"></a-text>
+          <a-text value="Chart 1/7" position="0 -0.7 0.01" color="#7f8c8d"
+                  width="2.8" align="center" scale="0.8 0.8 0.8"></a-text>
+        </a-plane>
+        <!-- Chart Frame -->
+        <a-box position="0 0 0" width="3.1" depth="0.05" height="2.1" color="#8B4513"></a-box>
+      </a-entity>
+
+      <!-- Chart 2 - Physics (Back Center Wall) -->
+      <a-entity position="0 3.5 -12" rotation="0 0 0">
+        <a-plane width="3" height="2" color="#e8f4f8" material="shader: flat; side: double">
+          <a-text value="PHYSICS LAWS" position="0 0.7 0.01" color="#2c3e50" 
+                  width="2.8" align="center" font="exo2bold"></a-text>
+          <a-text value="F = m × a" position="0 0.3 0.01" color="#3498db"
+                  width="2.8" align="center"></a-text>
+          <a-text value="E = mc²" position="0 0 0.01" color="#3498db"
+                  width="2.8" align="center"></a-text>
+          <a-text value="V = IR" position="0 -0.3 0.01" color="#3498db"
+                  width="2.8" align="center"></a-text>
+          <a-text value="Chart 2/7" position="0 -0.7 0.01" color="#7f8c8d"
+                  width="2.8" align="center" scale="0.8 0.8 0.8"></a-text>
+        </a-plane>
+        <!-- Chart Frame -->
+        <a-box position="0 0 0" width="3.1" depth="0.05" height="2.1" color="#2c3e50"></a-box>
+      </a-entity>
+
+      <!-- Chart 3 - Chemistry (Back Right Wall) -->
+      <a-entity position="8 3.5 -12" rotation="0 0 0">
+        <a-plane width="3" height="2" color="#fff8dc" material="shader: flat; side: double">
+          <a-text value="CHEMISTRY" position="0 0.7 0.01" color="#2c3e50" 
+                  width="2.8" align="center" font="exo2bold"></a-text>
+          <a-text value="H₂O → Water" position="0 0.3 0.01" color="#8e44ad"
+                  width="2.8" align="center"></a-text>
+          <a-text value="C₆H₁₂O₆ → Glucose" position="0 0 0.01" color="#8e44ad"
+                  width="2.8" align="center"></a-text>
+          <a-text value="pH = -log[H⁺]" position="0 -0.3 0.01" color="#8e44ad"
+                  width="2.8" align="center"></a-text>
+          <a-text value="Chart 3/7" position="0 -0.7 0.01" color="#7f8c8d"
+                  width="2.8" align="center" scale="0.8 0.8 0.8"></a-text>
+        </a-plane>
+        <!-- Chart Frame -->
+        <a-box position="0 0 0" width="3.1" depth="0.05" height="2.1" color="#8e44ad"></a-box>
+      </a-entity>
+
+      <!-- Chart 4 - Biology (Left Wall Front) -->
+      <a-entity position="-12 3.5 -4" rotation="0 90 0">
+        <a-plane width="3" height="2" color="#e8f8e8" material="shader: flat; side: double">
+          <a-text value="BIOLOGY" position="0 0.7 0.01" color="#2c3e50" 
+                  width="2.8" align="center" font="exo2bold"></a-text>
+          <a-text value="DNA → A,T,C,G" position="0 0.3 0.01" color="#27ae60"
+                  width="2.8" align="center"></a-text>
+          <a-text value="Cell → Basic Unit" position="0 0 0.01" color="#27ae60"
+                  width="2.8" align="center"></a-text>
+          <a-text value="Mitosis & Meiosis" position="0 -0.3 0.01" color="#27ae60"
+                  width="2.8" align="center"></a-text>
+          <a-text value="Chart 4/7" position="0 -0.7 0.01" color="#7f8c8d"
+                  width="2.8" align="center" scale="0.8 0.8 0.8"></a-text>
+        </a-plane>
+        <!-- Chart Frame -->
+        <a-box position="0 0 0" width="3.1" depth="0.05" height="2.1" color="#27ae60"></a-box>
+      </a-entity>
+
+      <!-- Chart 5 - Computer Science (Left Wall Back) -->
+      <a-entity position="-12 3.5 4" rotation="0 90 0">
+        <a-plane width="3" height="2" color="#f0f0f0" material="shader: flat; side: double">
+          <a-text value="COMPUTER SCIENCE" position="0 0.7 0.01" color="#2c3e50" 
+                  width="2.8" align="center" font="exo2bold"></a-text>
+          <a-text value="if (x > 0) { }" position="0 0.3 0.01" color="#2c3e50"
+                  width="2.8" align="center"></a-text>
+          <a-text value="for i in range(n)" position="0 0 0.01" color="#2c3e50"
+                  width="2.8" align="center"></a-text>
+          <a-text value="O(n log n)" position="0 -0.3 0.01" color="#2c3e50"
+                  width="2.8" align="center"></a-text>
+          <a-text value="Chart 5/7" position="0 -0.7 0.01" color="#7f8c8d"
+                  width="2.8" align="center" scale="0.8 0.8 0.8"></a-text>
+        </a-plane>
+        <!-- Chart Frame -->
+        <a-box position="0 0 0" width="3.1" depth="0.05" height="2.1" color="#2c3e50"></a-box>
+      </a-entity>
+
+      <!-- Chart 6 - History (Right Wall - Free Standing) -->
+      <a-entity position="10 1.5 -5" rotation="0 -45 0">
+        <!-- Chart Stand -->
+        <a-box position="0 -1 0" width="0.1" depth="0.1" height="2" color="#8B4513"></a-box>
+        <a-box position="0 -1 0" width="1" depth="0.1" height="0.1" color="#8B4513"></a-box>
+        <!-- Chart -->
+        <a-plane position="0 0 0" width="2.5" height="1.8" color="#f8e8e8" material="shader: flat; side: double">
+          <a-text value="HISTORY TIMELINE" position="0 0.6 0.01" color="#2c3e50" 
+                  width="2.3" align="center" font="exo2bold"></a-text>
+          <a-text value="1066 - Norman Conquest" position="0 0.2 0.01" color="#c0392b"
+                  width="2.3" align="center" scale="0.8 0.8 0.8"></a-text>
+          <a-text value="1492 - Columbus" position="0 -0.1 0.01" color="#c0392b"
+                  width="2.3" align="center" scale="0.8 0.8 0.8"></a-text>
+          <a-text value="1776 - USA Independence" position="0 -0.4 0.01" color="#c0392b"
+                  width="2.3" align="center" scale="0.8 0.8 0.8"></a-text>
+          <a-text value="Chart 6/7" position="0 -0.8 0.01" color="#7f8c8d"
+                  width="2.3" align="center" scale="0.7 0.7 0.7"></a-text>
+        </a-plane>
+      </a-entity>
+
+      <!-- Chart 7 - Geography (Right Wall - Free Standing) -->
+      <a-entity position="10 1.5 5" rotation="0 -30 0">
+        <!-- Chart Stand -->
+        <a-box position="0 -1 0" width="0.1" depth="0.1" height="2" color="#8B4513"></a-box>
+        <a-box position="0 -1 0" width="1" depth="0.1" height="0.1" color="#8B4513"></a-box>
+        <!-- Chart -->
+        <a-plane position="0 0 0" width="2.5" height="1.8" color="#e8f4f8" material="shader: flat; side: double">
+          <a-text value="GEOGRAPHY" position="0 0.6 0.01" color="#2c3e50" 
+                  width="2.3" align="center" font="exo2bold"></a-text>
+          <a-text value="Continents: 7" position="0 0.2 0.01" color="#2980b9"
+                  width="2.3" align="center"></a-text>
+          <a-text value="Oceans: 5" position="0 -0.1 0.01" color="#2980b9"
+                  width="2.3" align="center"></a-text>
+          <a-text value="Longest River: Nile" position="0 -0.4 0.01" color="#2980b9"
+                  width="2.3" align="center" scale="0.8 0.8 0.8"></a-text>
+          <a-text value="Chart 7/7" position="0 -0.8 0.01" color="#7f8c8d"
+                  width="2.3" align="center" scale="0.7 0.7 0.7"></a-text>
+        </a-plane>
+      </a-entity>
+
+      <!-- ================= STUDY MATERIALS ON TABLE ================= -->
+      <!-- Textbooks Stack -->
+      <a-box position="0 1.8 0" width="1.2" depth="1.8" height="0.4"
+             color="#1e3a8a" rotation="0 20 0">
+        <a-text value="QUIZ PREP" position="0 0.25 0.21" scale="0.3 0.3 0.3"
+                color="white" align="center" font="exo2bold"></a-text>
+      </a-box>
+
+      <!-- Notebook -->
+      <a-box position="-1.5 1.8 -0.2" width="0.9" depth="1.2" height="0.2"
+             color="#ffffff" rotation="0 -10 0">
+        <a-text value="NOTES" position="0 0.05 0.11" scale="0.2 0.2 0.2"
+                color="#c0392b" align="center"></a-text>
+      </a-box>
+
+      <!-- Pen & Pencil -->
+      <a-cylinder position="0.8 1.8 -1.2" radius="0.02" height="0.15"
+                   color="#000000" rotation="30 0 0"></a-cylinder>
+      <a-cylinder position="1 1.8 -1.1" radius="0.015" height="0.18"
+                   color="#f39c12" rotation="45 0 0"></a-cylinder>
+
+      <!-- Calculator -->
+      <a-box position="1.8 1.8 -0.5" width="0.4" depth="0.6" height="0.1"
+             color="#7f8c8d" rotation="0 15 0">
+        <a-text value="CALC" position="0 0.01 0.06" scale="0.15 0.15 0.15"
+                color="white" align="center"></a-text>
+      </a-box>
+
+      <!-- ================= STUDY ENVIRONMENT ENHANCEMENTS ================= -->
+      <!-- Study Lamp -->
+      <a-entity position="0 2.5 -3">
+        <!-- Lamp Base -->
+        <a-cylinder position="0 -1.2 0" radius="0.2" height="0.2"
+                    color="#2c3e50"></a-cylinder>
+        <!-- Lamp Stem -->
+        <a-cylinder position="0 -0.5 0" radius="0.05" height="1.5"
+                    color="#34495e"></a-cylinder>
+        <!-- Lamp Shade -->
+        <a-cone position="0 0.3 0" radius-bottom="0.6" radius-top="0.1" height="0.5"
+                color="#f1c40f" material="transparent: true; opacity: 0.7"></a-cone>
+        <!-- Light Bulb -->
+        <a-sphere position="0 0.
