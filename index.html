@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UCC Table Scene - A-Frame</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene background="color: #f0ede8">
+      <a-plane position="0 0 0" rotation="-90 0 0" width="16" height="16" color="#9c6e45"></a-plane>
+      <a-box position="0 -8 4" depth="0.5" width="16" height="8" color="#f5f2e7"></a-box>
+      <a-box position="-8 0 4" depth="16" width="0.5" height="8" color="#f5f2e7"></a-box>
+      <a-box position="0 0 2" width="6" depth="4" height="0.2" color="#c08b50"></a-box>
+
+      <a-box position="2.6 1.6 1" width="0.3" depth="0.3" height="2" color="#c08b50"></a-box>
+      <a-box position="-2.6 1.6 1" width="0.3" depth="0.3" height="2" color="#c08b50"></a-box>
+      <a-box position="2.6 -1.6 1" width="0.3" depth="0.3" height="2" color="#c08b50"></a-box>
+      <a-box position="-2.6 -1.6 1" width="0.3" depth="0.3" height="2" color="#c08b50"></a-box>
+
+      <a-plane position="0 0 2.11" rotation="-90 0 0" width="7" height="5"
+        color="#cc0000" material="shader: standard; src: https://cdn.aframe.io/a-painter/images/checker.png; repeat: 8 8;">
+      </a-plane>
+
+      <a-entity position="-4 -4 4" rotation="-25 45 0">
+        <a-camera></a-camera>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
